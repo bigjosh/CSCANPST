@@ -260,48 +260,14 @@ Loop
 
 	{
 
+			
 		WinActivate
 		WinWaitActive
+		Send {ENTER}
+		WinWaitClose
 
-		if param3=N
-		   Send !M
-
-		Send !R
-		Loop 
-
-		{
-
-
-			ifWinExist, Inbox Repair Tool, The backup file 
-			{
-				WinActivate
-				WinWaitActive
-
-			   	Send !Y
-
-
-				WinWaitClose
-
-			}
-		
-			
-			ifWinExist, Inbox Repair Tool, Repair complete 
-
-			{
-				WinActivate
-				WinWaitActive
-				Send {ENTER}
-				WinWaitClose
-				FileAppend, Minor inconsistencies repaired`n , cscanpst.log
-			 	exitapp 1
-			}
-		
-
-
-
-		}			
-
-
+		FileAppend, Minor inconsistencies not repaired`n , cscanpst.log
+	 	exitapp 1
 		
 
 	}	
