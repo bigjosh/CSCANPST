@@ -1,6 +1,6 @@
 ;
 ; AutoHotkey Version: 1.x
-; Language:       ported to pt-BR (Hugo Sampaio)
+; Language:       English / working with scanpst.exe portuguese Brazil pt-BR 
 ; Platform:       Win9x/NT
 ; Author:         josh levine (http://josh.com/cmdscanpst)
 ;
