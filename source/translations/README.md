@@ -17,13 +17,13 @@ to know exactly what some of the errors look like if you have never encountered 
 
 These words show up in the windows when you run SCANPST by itself. For example, when I run scan PST I see…
 
-![](images/repair.gif)
+![](images/repair.png)
 
 The CSCNAPST program is looking for the words “Microsoft Inbox Repair Tool“  in the header of the windows.  Yours might say something different – in French presumably. 
 
 When I run a scan on a slightly corrupted file, I see…
 
-![](images/minor.gif)
+![](images/minor.png)
 
 Here, CSCANPST is looking for the words “Only minor inconsistencies” inside the window. See?
 
