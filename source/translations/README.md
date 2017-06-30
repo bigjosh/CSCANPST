@@ -14,6 +14,24 @@ Anyplace you see `ifWinExist`, the text at the end of the line must exactly matc
 You can find this text by manually walking thought the SCANPST.EXE program and noting the text, although it might be hard
 to know exactly what some of the errors look like if you have never encountered them. Maybe a google search can find them?
 
+
+These words show up in the windows when you run SCANPST by itself. For example, when I run scan PST I see…
+
+![](images/repair.gif)
+
+The CSCNAPST program is looking for the words “Microsoft Inbox Repair Tool“  in the header of the windows.  Yours might say something different – in French presumably. 
+
+When I run a scan on a slightly corrupted file, I see…
+
+![](images/minor.gif)
+
+Here, CSCANPST is looking for the words “Only minor inconsistencies” inside the window. See?
+
+You can pick any words inside the target window as long as they are not in any other window. It is nice, however, to pick words the help explain which window you are looking for, so “in this file. Repairing the” would also work on my version, but not as clear which window that refers to in the code. 
+
+
+
+
 Here is an example of a translation so you can see which parts changed (although he did not update the user alert messages so they are still in English)…
 
 https://github.com/bigjosh/CSCANPST/blob/master/source/translations/cscanpst.pt-br.ahk
