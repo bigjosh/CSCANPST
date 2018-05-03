@@ -61,7 +61,7 @@ if param3=N
 SetTitleMatchMode 2
 
 
-IfWinExist Microsoft Inbox Repair Tool
+IfWinExist Réparateur de boîte de réception de Microsoft
 {
 	FileAppend, ERROR: Repair Tool is already running , cscanpst.log
 	ExitApp 3
@@ -84,7 +84,7 @@ Send !S
 Loop 
 {
 
-	ifWinExist, Inbox Repair Tool, been canceled
+	ifWinExist, Réparateur de boîte de réception, été annulée
 	{
 
 		WinActivate
@@ -100,7 +100,7 @@ Loop
 	
 
 
-	ifWinExist, Inbox Repair Tool, error prevented access
+	ifWinExist, Réparateur de boîte de réception, error prevented access
 	{
 
 		WinActivate
@@ -114,7 +114,7 @@ Loop
 	}
 
 
-	ifWinExist, Inbox Repair Tool, in use by another
+	ifWinExist, Réparateur de boîte de réception, utilisé par une autre application
 	{
 
 		WinActivate
@@ -128,7 +128,7 @@ Loop
 	}
 
 
-	ifWinExist, Inbox Repair Tool, does not exist
+	ifWinExist, Réparateur de boîte de réception, n'existe pas
 	{
 
 		WinActivate
@@ -142,7 +142,7 @@ Loop
 	}
 
 
-	ifWinExist, Inbox Repair Tool, does not recognize the file
+	ifWinExist, Réparateur de boîte de réception, does not recognize the file
 	{
 
 		WinActivate
@@ -156,7 +156,7 @@ Loop
 	}
 
 
-	ifWinExist, Inbox Repair Tool, error has occurred
+	ifWinExist, Réparateur de boîte de réception, une erreur
 	{
 
 		WinActivate
@@ -169,7 +169,7 @@ Loop
 
 	}
 
-	ifWinExist, Inbox Repair Tool, is read-only
+	ifWinExist, Réparateur de boîte de réception, lecture seule
 	{
 
 		WinActivate
@@ -183,7 +183,7 @@ Loop
 	}
 
 
-	ifWinExist, Inbox Repair Tool, No errors were found
+	ifWinExist, Réparateur de boîte de réception, No errors were found
 
 	{
 
@@ -200,7 +200,7 @@ Loop
 	}
 	
 
-	ifWinExist, Inbox Repair Tool, To repair these errors
+	ifWinExist, Réparateur de boîte de réception, To repair these errors
 	{
 
 		WinActivate
@@ -216,7 +216,7 @@ Loop
 		{
 
 
-			ifWinExist, Inbox Repair Tool, The backup file 
+			ifWinExist, Réparateur de boîte de réception, The backup file 
 			{
 
 				WinActivate
@@ -232,7 +232,7 @@ Loop
 			}
 		
 		
-			ifWinExist, Inbox Repair Tool, Repair complete 
+			ifWinExist, Réparateur de boîte de réception, Réparation de la boîte de réception terminée 
 
 			{
 				WinActivate
@@ -256,7 +256,7 @@ Loop
 	}	
 
 
-	ifWinExist, Inbox Repair Tool, Only minor inconsistencies were found
+	ifWinExist, Réparateur de boîte de réception, Seules des incohérences mineures
 
 	{
 
