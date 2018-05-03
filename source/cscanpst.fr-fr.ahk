@@ -100,7 +100,7 @@ Loop
 	
 
 
-	ifWinExist, Réparateur de boîte de réception, error prevented access
+	ifWinExist, Réparateur de boîte de réception, Une erreur inattendue
 	{
 
 		WinActivate
@@ -142,7 +142,7 @@ Loop
 	}
 
 
-	ifWinExist, Réparateur de boîte de réception, does not recognize the file
+	ifWinExist, Réparateur de boîte de réception, ne reconnaît pas le fichier
 	{
 
 		WinActivate
@@ -156,7 +156,7 @@ Loop
 	}
 
 
-	ifWinExist, Réparateur de boîte de réception, une erreur
+	ifWinExist, Réparateur de boîte de réception, une erreur inconnue
 	{
 
 		WinActivate
@@ -183,7 +183,7 @@ Loop
 	}
 
 
-	ifWinExist, Réparateur de boîte de réception, No errors were found
+	ifWinExist, Réparateur de boîte de réception, Aucune erreur détectée
 
 	{
 
@@ -200,7 +200,7 @@ Loop
 	}
 	
 
-	ifWinExist, Réparateur de boîte de réception, To repair these errors
+	ifWinExist, Réparateur de boîte de réception, Pour le réparer
 	{
 
 		WinActivate
@@ -216,7 +216,7 @@ Loop
 		{
 
 
-			ifWinExist, Réparateur de boîte de réception, The backup file 
+			ifWinExist, Réparateur de boîte de réception, Le fichier de sauvegarde 
 			{
 
 				WinActivate
