@@ -1,7 +1,7 @@
 REM ***This batch file will automatically run SCANPST on every PST file in the 
 REM ***directory specified by PST_FILE_MASK. 
 
-set SCANPST_PATH=""C:\Program Files (x86)\Microsoft Office\Office12\SCANPST.EXE"
+set SCANPST_PATH="C:\Program Files (x86)\Microsoft Office\Office12\SCANPST.EXE"
 set PST_FILE_MASK="D:\Users\josh\Documents\My Mail\*.pst"
 
 REM *** CD into in the directory that contains the launched bacth file...
