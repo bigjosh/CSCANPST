@@ -1,4 +1,4 @@
-;
+﻿;
 ; AutoHotkey Version: 1.x
 ; Language:       English
 ; Platform:       Win9x/NT
@@ -13,13 +13,13 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-FileAppend, Launched on %2%... , cscanpst.log
+FileAppend, Gestartet mit %2%...`n , cscanpst.log
 
 
 if 0 < 2
 {
 	FileAppend, ERROR: Nicht genug Parameter spezifziert , cscanpst.log
-	MsgBox CSCANPST benötigt mindestens 2 parameter, hat aber nur %0% erhalten.
+	MsgBox CSCANPST Mindestens 2 Parameter notwendig, hat aber nur %0% erhalten.
 	ExitApp 11
 
 }
@@ -32,7 +32,7 @@ param1 = %1%
 
 if !FileExist( param1 )
 {
-	FileAppend, ERROR: SCANPST.EXE nicht gefunden , cscanpst.log
+	FileAppend, ERROR: SCANPST.EXE nicht gefunden`n , cscanpst.log
 	MsgBox SCANPST.EXE nicht gefunden in [%1%].
 	ExitApp 12
 }
@@ -43,7 +43,7 @@ param2 = %2%
 
 if !FileExist( param2 )
 {
-	FileAppend, ERROR: PST datei [%2%] nicht gefunden , cscanpst.log
+	FileAppend, ERROR: PST datei [%2%] nicht gefunden`n , cscanpst.log
 	MsgBox Keine PST Datei gefunden in [%2%].
 	ExitApp 13
 }
@@ -53,7 +53,7 @@ param3 = %3%
 	
 if param3=N
 {
-	FileAppend, (INFO: Es wird keine backup PST datei erstellt)...  , cscanpst.log
+	FileAppend, (INFO: Es wird keine backup PST datei erstellt)...`n  , cscanpst.log
 }
 
 
@@ -63,7 +63,7 @@ SetTitleMatchMode 2
 
 IfWinExist Tool zum Reparieren des Posteingangs
 {
-	FileAppend, ERROR: Reparier Tool läuft bereits , cscanpst.log
+	FileAppend, ERROR: Reparier Tool bereits gestartet`n , cscanpst.log
 	ExitApp 3
 
 }
@@ -78,19 +78,19 @@ WinWaitActive Tool zum Reparieren des Posteingangs
 ;Enter the filename to be scanned
 Send %2%
 
-Send !S
+Send !t
 
 
 Loop 
 {
 
-	ifWinExist, Tool zum Reparieren des Posteingangs, Die Prüfung wurde abgebrochen.
+	ifWinExist, Tool zum Reparieren des Posteingangs, wurde abgebrochen. An der
 	{
 
 		WinActivate
 		WinWaitActive
 		Send {ENTER}
-		Send !C
+		Send !N
 			
 		FileAppend, ERROR: Abbruch durch Benutzer`n , cscanpst.log
 	
@@ -100,13 +100,13 @@ Loop
 	
 
 
-	ifWinExist, Tool zum Reparieren des Posteingangs, error prevented access
+	ifWinExist, Tool zum Reparieren des Posteingangs, Zugriff verweigert
 	{
 
 		WinActivate
 		WinWaitActive
 		Send {ENTER}
-		Send !C
+		Send !N
 			
 		FileAppend, ERROR: Konnte Datei nicht öffen`n , cscanpst.log
 		exitapp 5
@@ -120,7 +120,7 @@ Loop
 		WinActivate
 		WinWaitActive
 		Send {ENTER}
-		Send !C
+		Send !N
 			
 		FileAppend, ERROR: Datei bereits in benutzung`n , cscanpst.log
 		exitapp 6
@@ -134,7 +134,7 @@ Loop
 		WinActivate
 		WinWaitActive
 		Send {ENTER}
-		Send !C
+		Send !N
 			
 		FileAppend, ERROR: Datei nicht gefunden`n , cscanpst.log
 		exitapp 7
@@ -148,7 +148,7 @@ Loop
 		WinActivate
 		WinWaitActive
 		Send {ENTER}
-		Send !C
+		Send !N
 			
 		FileAppend, ERROR: Dateityp nicht erkannt`n , cscanpst.log
 		exitapp 8
@@ -156,26 +156,26 @@ Loop
 	}
 
 
-	ifWinExist, Tool zum Reparieren des Posteingangs, error has occurred
+	ifWinExist, Tool zum Reparieren des Posteingangs, Ein Fehler ist aufgetreten
 	{
 
 		WinActivate
 		WinWaitActive
 		Send {ENTER}
-		Send !C
+		Send !N
 			
 		FileAppend, ERROR: Ein Fehler ist aufgetreten`n , cscanpst.log
 		exitapp 9
 
 	}
 
-	ifWinExist, Tool zum Reparieren des Posteingangs, ist schreibgeschützt
+	ifWinExist, Tool zum Reparieren des Posteingangs, ist schreibgesch
 	{
 
 		WinActivate
 		WinWaitActive
 		Send {ESC}
-		Send !C
+		Send !N
 			
 		FileAppend, ERROR: PST Datei ist Schreibgeschützt`n , cscanpst.log
 		exitapp 10
@@ -183,7 +183,7 @@ Loop
 	}
 
 
-	ifWinExist, Tool zum Reparieren des Posteingangs, In dieser Datei wurde kein Fehler gefunden
+	ifWinExist, Tool zum Reparieren des Posteingangs, In dieser Datei wurden keine Fehler gefunden
 
 	{
 
@@ -207,7 +207,7 @@ Loop
 		WinWaitActive
 
 		if param3=N
-		   Send !M
+		   Send {SPACE}
 
 
 		Send !R
@@ -224,7 +224,7 @@ Loop
 
 
 				
-				Send !Y
+				Send !J
 
 
 				WinWaitClose
@@ -256,7 +256,7 @@ Loop
 	}	
 
 
-	ifWinExist, Tool zum Reparieren des Posteingangs, In dieser Datei wuden nur unbedeutende Inkonsistenzen gefunden
+	ifWinExist, Tool zum Reparieren des Posteingangs, In dieser Datei wurden nur unbedeutende Inkonsistenzen gefunden
 
 	{
 
@@ -265,9 +265,11 @@ Loop
 		WinWaitActive
 		Send {ENTER}
 		WinWaitClose
+	
 
-		FileAppend, Minor inconsistencies not repaired`n , cscanpst.log
-	 	exitapp 1
+		FileAppend, Unbedeutende Inkonsistenzen nicht Repariert`n , cscanpst.log
+		exitapp 1
+	 	
 		
 
 	}	
