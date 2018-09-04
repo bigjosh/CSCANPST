@@ -13,7 +13,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-FileAppend, Gestartet mit %2%...`n , cscanpst.log
+FileAppend, Gestartet mit %2%... , cscanpst.log
 
 
 if 0 < 2
@@ -156,13 +156,13 @@ Loop
 	}
 
 
-	ifWinExist, Tool zum Reparieren des Posteingangs, Ein Fehler ist aufgetreten
+	ifWinExist, Tool zum Reparieren des Posteingangs, Aufgrund eines unbekannten Fehlers
 	{
 
 		WinActivate
 		WinWaitActive
 		Send {ENTER}
-		Send !N
+		Send !S
 			
 		FileAppend, ERROR: Ein Fehler ist aufgetreten`n , cscanpst.log
 		exitapp 9
@@ -175,7 +175,7 @@ Loop
 		WinActivate
 		WinWaitActive
 		Send {ESC}
-		Send !N
+		Send !S
 			
 		FileAppend, ERROR: PST Datei ist Schreibgeschützt`n , cscanpst.log
 		exitapp 10
@@ -183,7 +183,7 @@ Loop
 	}
 
 
-	ifWinExist, Tool zum Reparieren des Posteingangs, In dieser Datei wurden keine Fehler gefunden
+	ifWinExist, Tool zum Reparieren des Posteingangs, Datei wurden keine Fehler gefunden.
 
 	{
 
@@ -256,13 +256,14 @@ Loop
 	}	
 
 
-	ifWinExist, Tool zum Reparieren des Posteingangs, In dieser Datei wurden nur unbedeutende Inkonsistenzen gefunden
+	ifWinExist, Tool zum Reparieren des Posteingangs, die nicht unbedingt behoben
 
 	{
 
 			
 		WinActivate
 		WinWaitActive
+		Send {ENTER}
 		Send {ENTER}
 		WinWaitClose
 	
